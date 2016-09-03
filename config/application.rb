@@ -26,5 +26,9 @@ module TalkAt
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.after_initialize do
+      config.short_event_service = BogusShortService
+      config.long_event_service = BogusLongService
+    end
   end
 end
